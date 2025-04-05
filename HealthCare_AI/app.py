@@ -45,13 +45,12 @@ def prediction():
     return render_template('prediction.html')
 
 # Load models and label encoder
-random_forest_model = joblib.load('random_forest_model.pkl')
-naive_bayes_model = joblib.load('naive_bayes_model.pkl')
-decision_tree_model = joblib.load('decision_tree_model.pkl')
-le = joblib.load('label_encoder.pkl')
+random_forest_model = joblib.load('models/random_forest_model.pkl')
+naive_bayes_model = joblib.load('models/naive_bayes_model.pkl')
+decision_tree_model = joblib.load('models/decision_tree_model.pkl')
+le = joblib.load('models/label_encoder.pkl')
+all_symptoms = joblib.load('models/all_symptoms_list2.pkl')
 
-# Load all symptoms
-all_symptoms = joblib.load('all_symptoms_list2.pkl')
 
 def predict_disease(chosen_symptoms):
     input_vector = [1 if symptom in chosen_symptoms else 0 for symptom in all_symptoms]
