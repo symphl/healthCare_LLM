@@ -22,7 +22,6 @@ class ChatOpenRouter(ChatOpenAI):
 llm = ChatOpenRouter(
     model_name="deepseek/deepseek-r1:free"
 )
-prompt = ChatPromptTemplate.from_template("tell me a short joke about {topic}")
 
 template_medical = ChatPromptTemplate.from_template("""
 MEDICAL CONSULTATION TEMPLATE                                                   
